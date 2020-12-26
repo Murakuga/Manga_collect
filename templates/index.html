@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block title %}一覧表{% endblock %}
+
+{% block content %}
+<h1>漫画一覧</h1>
+
+<ul>
+{% for info in manga_info %}
+    <li>{{info[0]}} : <a href={{info[2]}} target="_blank">{{info[1]}} </a></li>
+{% endfor %}
+<h2 style="color: red;">更新</h2>
+{% for infos in new_manga_info %}
+    <li>{{infos[0]}} : <a href={{infos[2]}} target="_blank">{{infos[1]}} </a></li>
+{% endfor %}
+</ul>
+{% endblock %}
